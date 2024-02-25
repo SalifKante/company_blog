@@ -1,1 +1,9 @@
 base.html
+login.html
+about.html
+post_list.html
+post_detail.html
+post_form.html
+post_draft_list.html
+post_confirm_delete.html
+comment_form.html
