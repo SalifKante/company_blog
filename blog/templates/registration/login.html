@@ -1,16 +1,31 @@
 {% extends "blog/base.html" %} 
-{% block content%} 
-    <div>
-        <h2>Please Login</h2>
-        <h3>(Must be SuperUser, please check with the site admin)</h3>
-        {% if form.errors %}
-            <p>Your username, and your password did not match! Please try again.</p>
-        {% endif %}
-        <form action="{% url 'login' %}" method="POST">
-            {% csrf_token %}
-            {{ form.as_p }}
-            <input type="submit" class="btn btn-primary" value="login">
-            <input type="hidden" name="next" value="{{next}}">
-        </form>
+
+{% block content %} 
+<div class="container-fluid bg-light" style="padding-top: 50px; padding-bottom: 50px;">
+    <div class="row justify-content-center">
+        <div class="col-md-6">
+            <div class="card mt-5 p-4">
+                <div class="card-body">
+                    <h2 class="card-title">Please Login</h2>
+                    <p class="card-subtitle mb-4 text-muted">(Must be SuperUser, please check with the site admin)</p>
+                    
+                    {% if form.errors %}
+                        <div class="alert alert-danger">
+                            <strong>Error:</strong> Your username and password did not match. Please try again.
+                        </div>
+                    {% endif %}
+                    
+                    <form action="{% url 'login' %}" method="POST">
+                        {% csrf_token %}
+                        {{ form.as_p }}
+                        <div class="d-grid gap-2">
+                            <button type="submit" class="btn btn-primary btn-block mt-3">Login</button>
+                        </div>
+                        <input type="hidden" name="next" value="{{ next }}">
+                    </form>
+                </div>
+            </div>
+        </div>
     </div>
+</div>
 {% endblock %}

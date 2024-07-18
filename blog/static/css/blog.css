@@ -64,3 +64,14 @@
   position: absolute;
   right: 0px;
 }
+
+/* post_form.html */
+.centered-form {
+  padding: 2rem; /* Adjust padding as needed */
+  border: 1px solid #ccc;
+  border-radius: 10px;
+  width: 60%;
+  max-width: 800px;
+  margin: auto; /* Centers the card */
+  padding-right: auto;
+}
